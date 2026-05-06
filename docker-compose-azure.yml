@@ -1,0 +1,11 @@
+services:
+  model-service:
+    image: deepjavalibrary/djl-serving:0.36.0
+  
+
+  web-service:
+    image: benbehat/consumer-benbehat:latest # <-- WICHTIG: Hier deinen Namen eintragen!
+    ports:
+      - "80:8083" # Azure erwartet den Traffic oft auf Port 80
+    depends_on:
+      - model-service

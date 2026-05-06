@@ -9,6 +9,6 @@ services:
     image: consumer-benbehat:latest
     platform: linux/amd64
     ports:
-      - "8083:8080" # Gemappt auf deinen internen Spring Boot Port (8080 laut application.properties)
+      - "8083:8083" # Gemappt auf deinen internen Spring Boot Port (8080 laut application.properties)
     depends_on:
       - model-service
