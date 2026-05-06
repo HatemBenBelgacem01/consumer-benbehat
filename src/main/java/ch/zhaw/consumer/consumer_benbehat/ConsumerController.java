@@ -25,7 +25,7 @@ public class ConsumerController {
     @PostMapping(path = "/analyze")
     public String predict(@RequestParam("image") MultipartFile image) throws Exception {
         InputStream is = new ByteArrayInputStream(image.getBytes());
-        var uri = "http://localhost:8082/predictions/traced_resnet18";
+        var uri = "http://model-service:8080/predictions/traced_resnet18";
         var webClient = WebClient.create();
         Resource resource = new InputStreamResource(is);
         var result = webClient.post()

@@ -1,0 +1,14 @@
+services:
+  model-service:
+    image: deepjavalibrary/djl-serving:0.36.0
+    platform: linux/amd64
+    ports:
+      - "8082:8080"
+
+  web-service:
+    image: consumer-benbehat:latest
+    platform: linux/amd64
+    ports:
+      - "8083:8080" # Gemappt auf deinen internen Spring Boot Port (8080 laut application.properties)
+    depends_on:
+      - model-service
