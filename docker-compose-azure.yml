@@ -1,7 +1,9 @@
 services:
   model-service:
     image: deepjavalibrary/djl-serving:0.36.0
-  
+    
+    command: >
+      djl-serving -m "traced_resnet18=https://resources.djl.ai/test-models/traced_resnet18.pt"
 
   web-service:
     image: benbehat/consumer-benbehat:latest # <-- WICHTIG: Hier deinen Namen eintragen!
